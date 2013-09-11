@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.authors = {'Sam Soffes' => 'sam@soff.es'}
   s.homepage = 'https://github.com/soffes/SAMTextField'
   s.summary = 'Handy UITextField additions like insetting text and changing the placeholder color.'
-  s.source = {:git => 'https://github.com/soffes/SAMTextField.git', :tag => 'v0.1.0'}
+  s.source = {:git => 'https://github.com/soffes/SAMTextField.git', :tag => "v#{spec.version}"}
   s.license = { :type => 'MIT', :file => 'LICENSE' }
 
   s.platform = :ios
