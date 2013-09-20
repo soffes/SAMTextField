@@ -41,10 +41,17 @@
 
 
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds {
-  CGRect rect = [super clearButtonRectForBounds:bounds];
-  rect.origin.x += self.clearButtonEdgeInsets.right;
-  rect.origin.y += self.clearButtonEdgeInsets.top;
-  return rect;
+    return UIEdgeInsetsInsetRect([super clearButtonRectForBounds:bounds], self.clearButtonEdgeInsets);
+}
+
+
+- (CGRect)rightViewRectForBounds:(CGRect)bounds {
+    return UIEdgeInsetsInsetRect([super rightViewRectForBounds:bounds], self.rightViewInsets);
+}
+
+
+- (CGRect)leftViewRectForBounds:(CGRect)bounds {
+    return UIEdgeInsetsInsetRect([super leftViewRectForBounds:bounds], self.leftViewInsets);
 }
 
 
@@ -53,6 +60,8 @@
 - (void)initialize {
   self.textEdgeInsets = UIEdgeInsetsZero;
   self.clearButtonEdgeInsets = UIEdgeInsetsZero;
+    self.leftViewInsets = UIEdgeInsetsZero;
+    self.rightViewInsets = UIEdgeInsetsZero;
 }
 
 @end

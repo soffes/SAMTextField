@@ -39,4 +39,28 @@
  */
 @property (nonatomic, assign) UIEdgeInsets clearButtonEdgeInsets;
 
+/**
+ The inset or outset margins for the edges of the view assigned to `rightView`.
+ 
+ Use this property to resize and reposition the effective drawing rectangle for the right view content. You can
+ specify a different value for each of the four insets (top, left, bottom, right), but only the top and right insets are
+ respected. A positive value will move the view farther away from the top right corner. Use the
+ `UIEdgeInsetsMake` function to construct a value for this property.
+ 
+ The default value is `UIEdgeInsetsZero`.
+ */
+@property (nonatomic, assign) UIEdgeInsets rightViewInsets;
+
+/**
+ The inset or outset margins for the edges of the view assigned to `leftView`.
+ 
+ Use this property to resize and reposition the effective drawing rectangle for the left view content. You can
+ specify a different value for each of the four insets (top, left, bottom, right), but only the top and right insets are
+ respected. A positive value will move the view farther away from the top right corner. Use the
+ `UIEdgeInsetsMake` function to construct a value for this property.
+ 
+ The default value is `UIEdgeInsetsZero`.
+ */
+@property (nonatomic, assign) UIEdgeInsets leftViewInsets;
+
 @end
