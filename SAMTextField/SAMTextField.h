@@ -11,6 +11,20 @@
  */
 @interface SAMTextField : UITextField
 
+///------------------------------------
+/// @name Accessing the Text Attributes
+///------------------------------------
+
+/**
+ The color of the placeholder text.
+ 
+ This property applies to the entire placeholder text string. The default value for this property is set by the system.
+ Setting this property to `nil` will use the system placeholder text color.
+ 
+ The default value is `nil`.
+ */
+@property (nonatomic, strong) UIColor *placeholderTextColor;
+
 ///------------------------------
 /// @name Drawing and Positioning
 ///------------------------------
