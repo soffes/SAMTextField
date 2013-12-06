@@ -12,9 +12,6 @@ SAMTextField *textField = [[SAMTextField alloc] initWithFrame:CGRectMake(20.0f, 
 
 // Inset some text
 textField.textEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
-
-// Change the placeholder color
-textField.placeholderTextColor = [UIColor lightGrayColor];
 ```
 
 See the [header](SAMTextField/SAMTextField.h) for full documentation.
