@@ -3,7 +3,7 @@
 //  SAMTextField
 //
 //  Created by Sam Soffes on 3/11/10.
-//  Copyright 2010-2013 Sam Soffes. All rights reserved.
+//  Copyright 2010-2014 Sam Soffes. All rights reserved.
 //
 
 /**
