@@ -40,6 +40,11 @@
 }
 
 
+- (CGRect)placeholderRectForBounds:(CGRect)bounds {
+  return [self textRectForBounds:bounds];
+}
+
+
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds {
     return UIEdgeInsetsInsetRect([super clearButtonRectForBounds:bounds], self.clearButtonEdgeInsets);
 }
