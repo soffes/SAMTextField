@@ -1,8 +1,8 @@
 # SAMTextField
 
-Handy UITextField additions like insetting text and changing the placeholder color.
+Handy UITextField additions like insetting text and other elements.
 
-SAMTextField is tested on iOS 6 and requires ARC. Released under the [MIT license](LICENSE).
+SAMTextField is tested on iOS 6-8 and requires ARC. Released under the [MIT license](LICENSE).
 
 ## Usage
 
