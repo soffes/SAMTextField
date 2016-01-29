@@ -87,7 +87,6 @@ public class SAMTextField : UITextField {
         return rect
     }
     
-    
     public override func rightViewRectForBounds(bounds: CGRect) -> CGRect {
         var rect = super.rightViewRectForBounds(bounds)
         rect.origin.x += rightViewInsets.right
