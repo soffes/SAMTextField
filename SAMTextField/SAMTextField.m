@@ -10,6 +10,16 @@
 
 @implementation SAMTextField
 
+#pragma mark - Accessors
+
+- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor {
+	_placeholderTextColor = placeholderTextColor;
+	
+	if (!self.text && self.placeholder) {
+		[self setNeedsDisplay];
+	}
+}
+
 #pragma mark - UIView
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -26,7 +36,6 @@
     }
     return self;
 }
-
 
 #pragma mark - UITextField
 
@@ -68,12 +77,36 @@
 	return rect;
 }
 
+- (void)drawPlaceholderInRect:(CGRect)rect {
+	if (!_placeholderTextColor) {
+		[super drawPlaceholderInRect:rect];
+		return;
+	}
+	
+    [_placeholderTextColor setFill];
+    
+    //check iOS version is >= 7.0
+    if (([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending)) {
+        rect =  CGRectInset(rect, 0, (rect.size.height - self.font.lineHeight) / 2.0);
+        [self.placeholder drawInRect:rect withAttributes:@{NSFontAttributeName:self.font, NSForegroundColorAttributeName:_placeholderTextColor}];
+    }
+    else {
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wenum-conversion"
+    #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_6_0
+        [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:NSLineBreakByTruncatingTail alignment:self.textAlignment];
+    #else
+        [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment];
+    #endif
+    #pragma clang diagnostic pop
+    }
+}
 
 #pragma mark - Private
 
 - (void)initialize {
-  self.textEdgeInsets = UIEdgeInsetsZero;
-  self.clearButtonEdgeInsets = UIEdgeInsetsZero;
+    self.textEdgeInsets = UIEdgeInsetsZero;
+    self.clearButtonEdgeInsets = UIEdgeInsetsZero;
     self.leftViewInsets = UIEdgeInsetsZero;
     self.rightViewInsets = UIEdgeInsetsZero;
 }
